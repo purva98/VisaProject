@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import requests
 import ssl
 context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
@@ -11,8 +11,18 @@ app = Flask(__name__)
 #need to figure out the response we will give for each of these API and modify them
 
 @app.route("/")
+def index3():
+    return render_template('index.html')
+
+@app.route("/login",methods = ['POST'])
 def index():
-    return "Login Page";
+    if(request.method == 'POST'):
+        username = request.form['username']
+        password = request.form['password']
+        if(username == 'admin' and password == 'password'):
+            return render_template('after_login.html')
+        else:
+            return render_template('index.html')
 
 @app.route("/merchantLocator",methods= ['GET','POST'])
 def index1():
@@ -45,6 +55,6 @@ def index2():
 
 if __name__ == '__main__':
    # context  = ('C:/Users/Dell/Downloads/key_a4dbf961-80de-48e5-ae02-2f5c187b67ab.pem','C:/Users/Dell/Downloads/cert.pem')
-    app.run(debug=True,ssl_context=context)
+    app.run(debug=True)
 
 
