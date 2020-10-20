@@ -24,6 +24,15 @@ def index():
         else:
             return render_template('index.html')
 
+@app.route("/viewList",methods = ['POST'])
+def view1():
+    if(request.method == 'POST'):
+        return render_template('merchant_list.html')
+
+@app.route("/profile",methods = ['GET','POST'])
+def profile():
+    return render_template('merchant_profiles.html')
+
 @app.route("/merchantLocator",methods= ['GET','POST'])
 def index1():
     if(request.method == 'GET'):
@@ -54,7 +63,4 @@ def index2():
 
 
 if __name__ == '__main__':
-   # context  = ('C:/Users/Dell/Downloads/key_a4dbf961-80de-48e5-ae02-2f5c187b67ab.pem','C:/Users/Dell/Downloads/cert.pem')
     app.run(debug=True)
-
-
