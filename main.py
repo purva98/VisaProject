@@ -1,10 +1,10 @@
 from flask import Flask, jsonify, request, render_template
 import requests
-import ssl
-context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-context.load_cert_chain('C:/Users/Dell/Downloads/cert.pem',
-                        'C:/Users/Dell/Downloads/key_a4dbf961-80de-48e5-ae02-2f5c187b67ab.pem')
-
+#import ssl
+#context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+#context.load_cert_chain('C:/Users/Dell/Downloads/cert.pem',
+ #                       'C:/Users/Dell/Downloads/key_a4dbf961-80de-48e5-ae02-2f5c187b67ab.pem')
+import http.client as http_client
 
 app = Flask(__name__)
 
@@ -24,31 +24,30 @@ def index():
         else:
             return render_template('index.html')
 
-@app.route("/viewList",methods = ['POST'])
-def view1():
-    if(request.method == 'POST'):
-        return render_template('merchant_list.html')
-
 @app.route("/profile",methods = ['GET','POST'])
 def profile():
     return render_template('merchant_profiles.html')
 
-@app.route("/merchantLocator",methods= ['GET','POST'])
-def index1():
-    if(request.method == 'GET'):
-
+@app.route("/viewList",methods = ['POST'])
+def view1():
+    if(request.method == 'POST'):
+        countrycode = request.form['countrycode']
+        postalcode = request.form['pincode']
+        categorycode = request.form['categorycode']
         url = "https://sandbox.api.visa.com/merchantlocator/v1/locator"
-
-        payload = " \r\n{\r\n\"searchOptions\": {\r\n\"matchScore\": \"true\",\r\n\"maxRecords\": \"5\",\r\n\"matchIndicators\": \"true\"\r\n},\r\n\"header\": {\r\n\"startIndex\": \"0\",\r\n\"requestMessageId\": \"Request_001\",\r\n\"messageDateTime\": \"2020-10-19T10:39:49.903\"\r\n},\r\n\"searchAttrList\": {\r\n\"distanceUnit\": \"M\",\r\n\"distance\": \"2\",\r\n\"merchantCountryCode\": \"840\",\r\n\"latitude\": \"37.363922\",\r\n\"longitude\": \"-121.929163\",\r\n\"merchantName\": \"Starbucks\"\r\n},\r\n\"responseAttrList\": [\r\n\"GNLOCATOR\"\r\n]\r\n}"
+        payload = "{\r\n\"searchOptions\": {\r\n\"matchScore\": \"false\",\r\n\"maxRecords\": \"5\",\r\n\"matchIndicators\": \"true\"\r\n},\r\n\"header\": {\r\n\"startIndex\": \"0\",\r\n\"requestMessageId\": \"Request_001\",\r\n\"messageDateTime\": \"2020-10-19T10:39:49.903\"\r\n},\r\n\"searchAttrList\": {\r\n\"distanceUnit\": \"M\",\r\n\"distance\": \"20\",\r\n\"merchantCountryCode\": \"840\",\r\n\"merchantPostalCode\":\"95110-1216\",\r\n\"merchantCategoryCode\": [\"5814\"]\r\n},\r\n\"responseAttrList\": [\r\n\"GNLOCATOR\"\r\n]\r\n}"
         headers = {
-            'Authorization': 'Basic RjE4NjBWMjA3WjlLS0dMNlhENVMyMWNaWmEyNWVwSnlXWTNHaEhXQ3N2dmEydUpIRTpqajJHWERORw==',
-            'Content-Type': 'application/json'
+            'Content-Type': "application/json"
         }
+        user_id = 'F1860V207Z9KKGL6XD5S21cZZa25epJyWY3GhHWCsvva2uJHE'
+        password = 'jj2GXDNG'
+        cert = 'C:/Users/Dell/Downloads/cert.pem'
+        key = 'C:/Users/Dell/Downloads/key_a4dbf961-80de-48e5-ae02-2f5c187b67ab.pem'
+        timeout = 10
 
-        response = requests.request("POST", url, headers=headers, data=payload)
-
+        response = requests.request("POST",url,cert = (cert,key),headers=headers,auth=(user_id,password),data = payload,timeout=timeout)
         print(response.text.encode('utf8'))
-        return response.text
+        return render_template('merchant_list.html')
 
     else:
         return jsonify({"error":"invalid input"})
@@ -63,4 +62,5 @@ def index2():
 
 
 if __name__ == '__main__':
+   # context  = ('C:/Users/Dell/Downloads/key_a4dbf961-80de-48e5-ae02-2f5c187b67ab.pem','C:/Users/Dell/Downloads/cert.pem')
     app.run(debug=True)
