@@ -187,20 +187,18 @@
         </div>
 		<div class="form-wrap">
           <p>Login In</p>
-          <form action="#" method="post">
+          <form action="/login" method="post">
  
             <div class="email floating-label">
-              <input type="email" required class="floating-input" name="email" />
-              <label for="email">Email</label>
+              <input type="text" required class="floating-input" name="username" />
+              <label for="username">Username</label>
             </div>
             <div class="company floating-label">
-              <input type="text" class="floating-input" name="company" />
-              <label for="password">Password</label>
+              <input type="password" class="floating-input" name="password" />
+              <label for="pass">Password</label>
             </div>
-            <div class="submit-btn">
-		      <a href="after_login.html">
-				Submit
-			  </a>
+            <div>
+                <input type="submit" class="submit-btn" />
             </div>
           </form>
         </div>
