@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv=“X-UA-Compatible” content=“IE=edge”>
   <!-- favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicons/apple-touch-icon.png') }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicons/favicon-32x32.png') }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicons/favicon-16x16.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/logo2.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/logo2.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/logo2.png') }}">
   <link rel="manifest" href="{{ url_for('static', filename='images/favicons/site.webmanifest') }}">
   <link rel="mask-icon" href="{{ url_for('static', filename='images/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/custom-responsive-style.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <script type="text/javascript" src="{{ url_for('static', filename='script/jquery-3.2.1.min.js') }}"></script>
   <script type="text/javascript"src="{{ url_for('static', filename='script/all-plugins.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='script/plugin-active.js') }}"></script>
@@ -32,7 +33,7 @@
         <div class="row">
           <div class="col">
             <div class="logo">
-              <a href="#"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+              <a href="#"><img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo"></a>
             </div>
           </div>
           <div class="col text-right">
@@ -81,12 +82,13 @@
     </div>
   </section>
   <!-- Banner ends here -->
+  
   <!-- Features section starts here -->
   <section id="Gain">
     <div class="container">
       <div class="title text-center">
-        <h3>Gain The Knowledge you Need to Succeed</h3>
-        <p> write about features etc etc...... Hover over each icon below, to read feature information</p>
+        <h3>Take Wise Lending Decisions with our support</h3>
+        <p> </p>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
@@ -95,8 +97,8 @@
               <i class="fa fa-cogs"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Easy Onboarding</h3>
+              <p>If you are a VISA partner bank, get onboarded with us within seconds!</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -109,8 +111,8 @@
               <i class="fa fa-chart-pie"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Merchant Locator</h3>
+              <p>Locate the merchants using pincode! Get insights to their profile!</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -123,8 +125,8 @@
               <i class="fa fa-tachometer-alt"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Know your clients</h3>
+              <p>With features like Trust score and Transactional volumes, know your clinets background</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -137,8 +139,8 @@
               <i class="fa fa-cubes"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Advertising Strategies</h3>
+              <p>Isn't it awesome to know which merchants require loans? Gain insights to build your custom advertisements in different locations!</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -153,7 +155,7 @@
   <!-- Contact us section starts here -->
   <section id="ContactUs">
     <div class="container contact-container">
-      <h3 class="contact-title">Get In Touch</h3>
+      <h3 class="contact-title">Get Started </h3>
       <div class="contact-outer-wrapper">
         <div class="form-wrap">
           <p>New User? Signup within seconds!</p>
@@ -186,7 +188,7 @@
           </form>
         </div>
 		<div class="form-wrap">
-          <p>Login In</p>
+          <p>Login</p>
           <form action="/login" method="post">
 
             <div class="email floating-label">
@@ -198,7 +200,7 @@
               <label for="pass">Password</label>
             </div>
             <div>
-                <input type="submit" class="submit-btn" />
+              <input type="submit"  class="btn btn-link" />
             </div>
           </form>
         </div>
