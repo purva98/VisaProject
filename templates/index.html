@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv=“X-UA-Compatible” content=“IE=edge”>
   <!-- favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicons/apple-touch-icon.png') }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicons/favicon-32x32.png') }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicons/favicon-16x16.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/logo2.png) }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/logo2.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/logo2.png') }}">
   <link rel="manifest" href="{{ url_for('static', filename='images/favicons/site.webmanifest') }}">
   <link rel="mask-icon" href="{{ url_for('static', filename='images/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col">
             <div class="logo">
-              <a href="#"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"></a>
+              <a href="#"><img src="images/logo2.png" alt="Logo"></a>
             </div>
           </div>
           <div class="col text-right">
@@ -85,8 +85,8 @@
   <section id="Gain">
     <div class="container">
       <div class="title text-center">
-        <h3>Gain The Knowledge you Need to Succeed</h3>
-        <p> write about features etc etc...... Hover over each icon below, to read feature information</p>
+        <h3>Take Wise Lending Decisions with our support</h3>
+        <p> </p>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
@@ -95,8 +95,8 @@
               <i class="fa fa-cogs"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Easy Onboarding</h3>
+              <p>If you are a VISA partner bank, get onboarded with us within seconds!</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -109,8 +109,8 @@
               <i class="fa fa-chart-pie"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Merchant Locator</h3>
+              <p>Locate the merchants using pincode! Get insights to their profile!</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -123,8 +123,8 @@
               <i class="fa fa-tachometer-alt"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Know your clients</h3>
+              <p>With features like Trust score and Transactional volumes, know your clinets background</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -137,8 +137,8 @@
               <i class="fa fa-cubes"></i>
             </div>
             <div class="icon-text">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sapiente cumque est, quaerat sequi aperiam quae repellendus. Aspernatur corrupti eos quam beatae, voluptatibus nemo distinctio ad suscipit, et officia velit.</p>
+              <h3>Advertising Strategies</h3>
+              <p>Isn't it awesome to know which merchants require loans? Gain insights to build your custom advertisements in different locations!</p>
               <div class="cta">
                 <a title="Read More" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
@@ -149,11 +149,11 @@
     </div>
   </section>
   <!-- Features section ends here -->
-
+  
   <!-- Contact us section starts here -->
   <section id="ContactUs">
     <div class="container contact-container">
-      <h3 class="contact-title">Get In Touch</h3>
+      <h3 class="contact-title">Get Started</h3>
       <div class="contact-outer-wrapper">
         <div class="form-wrap">
           <p>New User? Signup within seconds!</p>
@@ -187,18 +187,20 @@
         </div>
 		<div class="form-wrap">
           <p>Login In</p>
-          <form action="/login" method="post">
-
+          <form action="#" method="post">
+ 
             <div class="email floating-label">
-              <input type="text" required class="floating-input" name="username" />
-              <label for="username">Username</label>
+              <input type="email" required class="floating-input" name="email" />
+              <label for="email">Email</label>
             </div>
             <div class="company floating-label">
-              <input type="password" class="floating-input" name="password" />
-              <label for="pass">Password</label>
+              <input type="text" class="floating-input" name="company" />
+              <label for="password">Password</label>
             </div>
-            <div>
-                <input type="submit" class="submit-btn" />
+            <div class="submit-btn">
+		      <a href="after_login.html">
+				Submit
+			  </a>
             </div>
           </form>
         </div>
