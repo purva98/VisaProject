@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv=“X-UA-Compatible” content=“IE=edge”>
   <!-- favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/logo2.png) }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/logo2.png') }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/logo2.png') }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/logo2.png') }}">
   <link rel="manifest" href="{{ url_for('static', filename='images/favicons/site.webmanifest') }}">
@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col">
             <div class="logo">
-              <a href="#"><img src="images/logo2.png" alt="Logo"></a>
+              <a href="#"><img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo"></a>
             </div>
           </div>
           <div class="col text-right">
@@ -81,6 +81,7 @@
     </div>
   </section>
   <!-- Banner ends here -->
+  
   <!-- Features section starts here -->
   <section id="Gain">
     <div class="container">
@@ -149,11 +150,11 @@
     </div>
   </section>
   <!-- Features section ends here -->
-  
+
   <!-- Contact us section starts here -->
   <section id="ContactUs">
     <div class="container contact-container">
-      <h3 class="contact-title">Get Started</h3>
+      <h3 class="contact-title">Get Started </h3>
       <div class="contact-outer-wrapper">
         <div class="form-wrap">
           <p>New User? Signup within seconds!</p>
@@ -187,15 +188,15 @@
         </div>
 		<div class="form-wrap">
           <p>Login In</p>
-          <form action="#" method="post">
- 
+          <form action="/login" method="post">
+
             <div class="email floating-label">
-              <input type="email" required class="floating-input" name="email" />
-              <label for="email">Email</label>
+              <input type="text" required class="floating-input" name="username" />
+              <label for="username">Username</label>
             </div>
             <div class="company floating-label">
-              <input type="text" class="floating-input" name="company" />
-              <label for="password">Password</label>
+              <input type="password" class="floating-input" name="password" />
+              <label for="pass">Password</label>
             </div>
             <div class="submit-btn">
 		      <a href="after_login.html">

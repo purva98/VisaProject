@@ -49,45 +49,27 @@
       <h3 class="contact-title">Merchant Profiles</h3>
 		<table>
 		  <tr>
-			<th>Registered Name</th>
-			<th>Profile</th>
+			<th>Merchant Name</th>
+			<th>Merchant City</th>
+              <th>Merchant URL</th>
+              <th>Store ID</th>
+              <th>Merchant ID</th>
+              <th>Type</th>
+            <th>More Info</th>
 		  </tr>
+            {% for datapoint in data %}
 		  <tr>
-			<td>Alfreds Futterkiste</td>
-			<td><a href="{{ url_for('profile') }}">
-				View Profile
-			  </a></td>
+			<td>{{ datapoint['visaMerchantName'] }}</td>
+            <td>{{ datapoint['merchantCity'] }}</td>
+            <td>{{ datapoint['merchantUrl'] }}</td>
+            <td>{{ datapoint['visaStoreId'] }}</td>
+            <td>{{ datapoint['visaMerchantId'] }}</td>
+            <td>{{ datapoint['merchantCategoryCodeDesc'] }}</td>
+			<td>
+              <a></a>
+            </td>
 		  </tr>
-		  <tr>
-			<td>Centro comercial Moctezuma</td>
-			<td><a href="{{ url_for('profile') }}">
-				View Profile
-			  </a></td>
-		  </tr>
-		  <tr>
-			<td>Ernst Handel</td>
-			<td><a href="{{ url_for('profile') }}">
-				View Profile
-			  </a></td>
-		  </tr>
-		  <tr>
-			<td>Island Trading</td>
-			<td><a href="{{ url_for('profile') }}">
-				View Profile
-			  </a></td>
-		  </tr>
-		  <tr>
-			<td>Laughing Bacchus Winecellars</td>
-			<td><a href="{{ url_for('profile') }}">
-				View Profile
-			  </a></td>
-		  </tr>
-		  <tr>
-			<td>Magazzini Alimentari Riuniti</td>
-			<td><a href="{{ url_for('profile') }}">
-				View Profile
-			  </a></td>
-		  </tr>
+            {% endfor %}
 		</table>
     </div>
   </section>
